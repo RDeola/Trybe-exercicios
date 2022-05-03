@@ -5,6 +5,6 @@ O que eu vou aprender na Trybe:
 - Git
 - HTML
 - CSS
+- Forms
 - JavaScript
 - React
-
