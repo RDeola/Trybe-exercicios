@@ -31,10 +31,6 @@ ul.programacao li:nth-of-type(-n+3){
   color: blue;
 }
 
-ul.programacao li:where("Java*") {
-  background-color: pink;
-}
-
 a:hover {
   font-weight: bold;
 }
@@ -43,6 +39,9 @@ a:hover {
   color: orange;
   
 }
+/* #aliados li a[href*="stackoverflow"] {
+  color: orange;
+} */
 
 .w3schools:hover {
   color: green;
