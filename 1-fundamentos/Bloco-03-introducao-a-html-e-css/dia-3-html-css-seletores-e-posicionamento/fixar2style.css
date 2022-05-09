@@ -1,0 +1,62 @@
+div:hover {
+  border: 1px solid rgb(77, 77, 231);
+}
+
+.div1 {
+  color: rgb(179, 179, 62);
+}
+
+.div2 {
+  color: blueviolet;
+}
+
+.div3 {
+  color: brown;
+}
+
+.div4 {
+  color: coral;
+}
+
+.div5 {
+  color: darkgreen;
+}
+
+.h3-1 {
+  background-color: rgb(185, 221, 221);
+  text-decoration: line-through;
+  text-shadow: 2px 2px gray;
+}
+
+.h3-2 {
+  text-decoration-line: overline underline;
+  text-transform: uppercase ;
+  
+}
+
+.h3-3 {
+  text-decoration-style: wavy;
+  text-decoration: underline wavy;
+}
+
+.h3-4 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 2px rgb(165, 122, 122);
+}
+
+.h3-5 {
+  background-color: darkgray;
+  font-weight: 100;
+}
+
+div:nth-of-type(3) {
+  font-size: 30px;
+}
+
+div:nth-of-type(odd) {
+  font-style: italic;
+}
+
+/* div:nth-of-type(1n) {
+  color: rgb(143*n, 102*n, 102*n);
+} */
