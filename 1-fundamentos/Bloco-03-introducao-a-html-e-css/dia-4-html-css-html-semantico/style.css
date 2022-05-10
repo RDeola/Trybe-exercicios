@@ -2,3 +2,11 @@
   border: 2px solid blue;
   background-color: rgb(153, 202, 202);
 }
+
+.nav-menu {
+  
+}
+.nav-menu li{
+  display: inline-block;
+  margin: 0 10px;
+}
