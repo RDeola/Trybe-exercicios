@@ -4,30 +4,53 @@
   margin: 2px; */
 }
 
-/* .nav-menu {
-  
-} */
+.nav-menu {
+  background-color: rgb(89, 90, 92);
+  padding: 5px;
+  margin-top: 0%;
+  color: white;
+}
 article {
   display: inline-block;
   text-align: left;
   margin-left: 10px;
 }
 
-.nav-menu li{
+.nav-menu li {
   display: inline-block;
-  margin: 0 10px;
+  text-align: center;
+  border-right: 1px solid white;
+  width: 120px;
+}
+
+.nav-menu a{
+  
+  margin: 0 0px;
+  color: white;
+  /* border-left: 1px solid white; */
+  border-top: 0px;
+  padding: 5px;
+  
+  text-decoration: none;
+  
+}
+
+.button:hover a {
+  background-color: rgb(107, 109, 112);
 }
 
 .cient-table {
+  border-collapse: collapse;
   border: 2px solid black;
   width: 270px;
-  float: right;
+  /* float: right; */
   
 }
-.client-table h3 {
+.client-table h3,th,td {
   text-align: center;
   border: 1px solid gray;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  margin: 0px;
 }
 
 .who {
@@ -54,7 +77,6 @@ article {
 }
 
 .reference {
-  float: right;
   text-align: left;
   width: 280px;
 }
@@ -70,4 +92,11 @@ aside {
 .head, footer {
   background-color: rgb(213, 215, 218);
   padding: 5px;
+}
+
+.movie {
+  /* border: 2px solid black; */
+  box-shadow: -5px 0px 20px;
+  padding: 5px;
+  margin: 5px;
 }
