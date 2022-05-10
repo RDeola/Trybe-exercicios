@@ -1,0 +1,4 @@
+.border-test {
+  border: 2px solid blue;
+  background-color: rgb(153, 202, 202);
+}
