@@ -1,13 +1,73 @@
 .border-test {
-  border: 2px solid blue;
+  /* border: 2px solid blue;
   background-color: rgb(153, 202, 202);
-  margin: 2px;
+  margin: 2px; */
 }
 
-.nav-menu {
+/* .nav-menu {
   
+} */
+article {
+  display: inline-block;
+  text-align: left;
+  margin-left: 10px;
 }
+
 .nav-menu li{
   display: inline-block;
   margin: 0 10px;
+}
+
+.cient-table {
+  border: 2px solid black;
+  width: 270px;
+  float: right;
+  
+}
+.client-table h3 {
+  text-align: center;
+  border: 1px solid gray;
+  background-color: aliceblue;
+}
+
+.who {
+  height: auto;
+  width: 500PX;
+  text-align: justify;
+  border-bottom: 2px solid black;
+  box-shadow: 2px;
+}
+
+.who-img {
+  float: left;
+  margin: 10px;
+}
+
+.vision {
+  width: 500px;
+  text-align: justify;
+}
+
+.vision-img {
+  float: right;
+  margin: 10px;
+}
+
+.reference {
+  float: right;
+  text-align: left;
+  width: 280px;
+}
+  
+aside {
+  width: 275px;
+  float: right;
+  position: relative;
+  /* background-color: aquamarine; */
+  z-index: 1;
+}
+
+.head, footer {
+  background-color: rgb(213, 215, 218);
+  padding: 5px;
 }
