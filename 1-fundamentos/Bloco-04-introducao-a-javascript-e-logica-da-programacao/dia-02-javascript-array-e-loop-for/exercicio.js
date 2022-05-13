@@ -1,18 +1,18 @@
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let numbers = [5, 9, 3, 19, 700, 8, 100, 2, 35, 27];
 let novoNumbers = []
 
 let maior = 0;
 
 // Exercicio 2
-for (let index = 1; index < numbers.length; index += 1) {
-    for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
-        if (numbers[index] < numbers[secondIndex]) {
-        let position = numbers[index];
-        numbers[index] = numbers[secondIndex];
-        numbers[secondIndex] = position;
-        }
-    }
-}
+// for (let index = 1; index < numbers.length; index += 1) {
+//     for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+//         if (numbers[index] < numbers[secondIndex]) {
+//         let position = numbers[index];
+//         numbers[index] = numbers[secondIndex];
+//         numbers[secondIndex] = position;
+//         }
+//     }
+// }
 
 console.log(numbers);
 
@@ -41,3 +41,15 @@ console.log(numbers);
 // }
 
 // console.log(returnGreaterThan(numbers));
+
+function returnGreaterThan(v1, v2) {
+  while (v2.length > 1)
+    v2 = returnGreaterThan(v2.pop(), v2);
+  if (v1 > v2)
+    return v1
+  else
+    return v2
+
+}
+
+console.log(returnGreaterThan(0, numbers));
