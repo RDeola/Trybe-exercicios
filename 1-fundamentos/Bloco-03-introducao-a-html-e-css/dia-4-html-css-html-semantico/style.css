@@ -1,0 +1,102 @@
+.border-test {
+  /* border: 2px solid blue;
+  background-color: rgb(153, 202, 202);
+  margin: 2px; */
+}
+
+.nav-menu {
+  background-color: rgb(89, 90, 92);
+  padding: 5px;
+  margin-top: 0%;
+  color: white;
+}
+article {
+  display: inline-block;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.nav-menu li {
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid white;
+  width: 120px;
+}
+
+.nav-menu a{
+  
+  margin: 0 0px;
+  color: white;
+  /* border-left: 1px solid white; */
+  border-top: 0px;
+  padding: 5px;
+  
+  text-decoration: none;
+  
+}
+
+.button:hover a {
+  background-color: rgb(107, 109, 112);
+}
+
+.cient-table {
+  border-collapse: collapse;
+  border: 2px solid black;
+  width: 270px;
+  /* float: right; */
+  
+}
+.client-table h3,th,td {
+  text-align: center;
+  border: 1px solid gray;
+  /* background-color: aliceblue; */
+  margin: 0px;
+}
+
+.who {
+  height: auto;
+  width: 500PX;
+  text-align: justify;
+  border-bottom: 2px solid black;
+  box-shadow: 2px;
+}
+
+.who-img {
+  float: left;
+  margin: 10px;
+}
+
+.vision {
+  width: 500px;
+  text-align: justify;
+}
+
+.vision-img {
+  float: right;
+  margin: 10px;
+}
+
+.reference {
+  text-align: left;
+  width: 280px;
+}
+  
+aside {
+  width: 275px;
+  float: right;
+  position: relative;
+  /* background-color: aquamarine; */
+  z-index: 1;
+}
+
+.head, footer {
+  background-color: rgb(213, 215, 218);
+  padding: 5px;
+}
+
+.movie {
+  /* border: 2px solid black; */
+  box-shadow: -5px 0px 20px;
+  padding: 5px;
+  margin: 5px;
+}
