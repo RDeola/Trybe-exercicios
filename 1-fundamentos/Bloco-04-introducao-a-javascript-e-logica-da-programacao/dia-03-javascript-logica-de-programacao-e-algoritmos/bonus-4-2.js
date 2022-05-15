@@ -1,60 +1,60 @@
-// function quadrado(char, qtd) {
-//   //exercicios 4.3 bonus 1
-//   for (i = 1; i <= qtd; i += 1) {
-//     let linha = ''; 
-//     for (j = 1; j <= qtd; j += 1) {
-//       linha += char;
-//     }
-//     console.log(linha);
-//   }
-//   return ;
-// }
-// console.log(quadrado('*', 5));
+function quadrado(char, qtd) {
+  //exercicios 4.3 bonus 1
+  for (i = 1; i <= qtd; i += 1) {
+    let linha = ''; 
+    for (j = 1; j <= qtd; j += 1) {
+      linha += char;
+    }
+    console.log(linha);
+  }
+  return ;
+}
+console.log(quadrado('*', 5));
 
-// function triangulo(char, qtd) {
-//   //exercicios 4.3 bonus 2
-//   let linha = ''; 
-//   for (i = 1; i <= qtd; i += 1) {
-//     linha += char;
-//     console.log(linha);
-//   }
-//   return ;
-// }
-// console.log(triangulo('*', 5));
+function triangulo(char, qtd) {
+  //exercicios 4.3 bonus 2
+  let linha = ''; 
+  for (i = 1; i <= qtd; i += 1) {
+    linha += char;
+    console.log(linha);
+  }
+  return ;
+}
+console.log(triangulo('*', 5));
 
-// function trianguloInvertido(char, qtd) {
-//   //exercicios 4.3 bonus 3
-//   let linhaChar = '';
-//   for(i = 1; i <= qtd; i += 1) {
-//     let linhaEspaco ='';
-//     for (j = qtd - i;j > 0; j -= 1) {
-//       linhaEspaco += ' ';
-//     }
-//     linhaChar += char;
-//     console.log(linhaEspaco+linhaChar);
-//   }
-// }
-// console.log(trianguloInvertido('*', 5));
+function trianguloInvertido(char, qtd) {
+  //exercicios 4.3 bonus 3
+  let linhaChar = '';
+  for(i = 1; i <= qtd; i += 1) {
+    let linhaEspaco ='';
+    for (j = qtd - i;j > 0; j -= 1) {
+      linhaEspaco += ' ';
+    }
+    linhaChar += char;
+    console.log(linhaEspaco+linhaChar);
+  }
+}
+console.log(trianguloInvertido('*', 5));
 
-// //função PiramideSolid
-// // char = caracter para preenchimento da pirâmide
-// // qtd = quantidade de caracteres na base da pirâmide
-// function piramideSolid(char, qtd) {
-//   //exercicios 4.3 bonus 4
-//   let lchar = '';
-//   for (i = 1; i <= qtd; i += 1) {
-//     let espaco = '';
-//     lchar += char;
-//     if ((i%2) != 0) {
-//       for (j = (qtd-i)/2; j > 0; j -= 1) {
-//         espaco += ' ';
-//       }
-//       console.log(espaco+lchar+espaco);
-//     }
-//     //console.log();
-//   }
-// } 
-// console.log(piramideSolid('*', 5));
+//função PiramideSolid
+// char = caracter para preenchimento da pirâmide
+// qtd = quantidade de caracteres na base da pirâmide
+function piramideSolid(char, qtd) {
+  //exercicios 4.3 bonus 4
+  let lchar = '';
+  for (i = 1; i <= qtd; i += 1) {
+    let espaco = '';
+    lchar += char;
+    if ((i%2) != 0) {
+      for (j = (qtd-i)/2; j > 0; j -= 1) {
+        espaco += ' ';
+      }
+      console.log(espaco+lchar+espaco);
+    }
+    //console.log();
+  }
+} 
+console.log(piramideSolid('*', 5));
 
 //função montaPonta
 //  qtd = total de espaços a retornar
