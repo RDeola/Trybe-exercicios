@@ -52,18 +52,26 @@ function menorPalavra(array) {
 }
 console.log(menorPalavra(array));
 
-//function maiorPrimo(inicio) - fornecer um número para início.
+//função ehPrimo
+//  numero = numero a ser avaliado
+//retorna True se o numero avaliado for Primo.
+function ehPrimo(numero) {
+  let divisoes = 0;
+  for (j = numero; j > 0; j -= 1) {
+    if ((numero%j) === 0) {
+      divisoes += 1;
+    }
+  }
+  return (divisoes === 2) 
+}
+//function maiorPrimo(inicio)
+//  inicio - valor inicial para busca.
 //A função irá procurar de forma decrescente, a partir de início
 //qual o maior número primo 
 function maiorPrimo(inicio) {
   for (i = inicio; i > 1; i -= 1) {
-    let divisoes = 0;
-    for (j = i; j > 0; j -= 1) {
-      if ((i%j) === 0) {
-        divisoes += 1;
-      }
-    }
-    if (divisoes === 2) {
+    
+    if (ehPrimo(i)) {
       return i;
       i = 1;
     }
