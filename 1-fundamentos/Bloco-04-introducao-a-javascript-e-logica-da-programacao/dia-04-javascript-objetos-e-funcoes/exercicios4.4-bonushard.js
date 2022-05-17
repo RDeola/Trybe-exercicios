@@ -166,8 +166,9 @@ function countBasket(vetor) {
   return returnPhrase;
 }
 
-//Exercicios 4.4 - bonus 3 *********************************************
+//Exercicios 4.4 - bonus 4 *********************************************
 function encontraMorador() {
+  let result = '';
   let lastResident = {};
   let lastBlock = {}
   let numBlocks = Object.entries(moradores);
@@ -180,10 +181,23 @@ function encontraMorador() {
       }
     }
   }
-  console.log(lastResident.nome);
-  console.log(` O morador do ${lastBlock[0]} de nome ${lastResident.nome} ${lastResident.sobrenome} mora no ${lastResident.andar}° andar, apartamento ${lastResident.apartamento}.`);
+  result = ` O morador do ${lastBlock[0]} de nome ${lastResident.nome} ${lastResident.sobrenome} mora no ${lastResident.andar}° andar, apartamento ${lastResident.apartamento}.`;
+  return result;
 }
 
+//Exercicios 4.4 - bonus 5 *********************************************
+function listResidents() {
+  let numBlocks = Object.entries(moradores);
+  let residents = Object.values(moradores);
+  for(let block of numBlocks) {
+    console.log(block[0]);
+    for (let val in block) {
+      console.log(`   ${residents[0][val].nome} ${residents[0][val].nome}`);
+    }
+  }
+}
+
+//Função para executar cada exercício *********************************
 function executar(exercicio) {
   switch (exercicio) {
     case 1:
@@ -202,6 +216,8 @@ function executar(exercicio) {
     case 4:
       console.log(encontraMorador());
       break;
+    case 5:
+      console.log(listResidents());
     default:
       break;
   }
@@ -211,5 +227,5 @@ function executar(exercicio) {
 //console.log(Object.entries(tableRomanos)[0][1]);
 
 //valores aceitáveis para executar
-//1, 2, 3, 4
-executar(4);
+//1, 2, 3, 4, 5
+executar(5);
