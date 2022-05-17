@@ -19,7 +19,7 @@ const basket = [
   'Banana', 'Pera', 'Abacate', 'Uva',
 ];
 
-//objeto para o exercicio 1
+//objeto para o exercicio 1 ******************************************
 let tableRomanos = [{
   simbol: 'I',
   value: 1,
@@ -49,7 +49,40 @@ let tableRomanos = [{
   value: 1000,
   level: 7
 } ]
-//Exercicios 4.4 - bonus 1
+
+//Objeto para exercicio 4 *****************************************
+let moradores = {
+  blocoUm: [
+    {
+      nome: 'Luiza',
+      sobrenome: 'Guimarães',
+      andar: 10,
+      apartamento: 1005,
+    },
+    {
+      nome: 'William',
+      sobrenome: 'Albuquerque',
+      andar: 5,
+      apartamento: 502,
+    },
+  ],
+  blocoDois: [
+    {
+      nome: 'Murilo',
+      sobrenome: 'Ferraz',
+      andar: 8,
+      apartamento: 804,
+    },
+    {
+      nome: 'Zoey',
+      sobrenome: 'Brooks',
+      andar: 1,
+      apartamento: 101,
+    },
+  ],
+};
+
+//Exercicios 4.4 - bonus 1 ******************************************
 function convertRomanos(valor, soma) {
     let anterior = [];
     let atual = valor[0];
@@ -74,7 +107,7 @@ function convertRomanos(valor, soma) {
   return result;
 } 
 
-//Exercicios 4.4 - bonus 2
+//Exercicios 4.4 - bonus 2 ***************************************
 function arrayEven(vector) {
   let result = [];
   for (let vet of vector)
@@ -86,7 +119,7 @@ function arrayEven(vector) {
   return result;
 }
 
-//Exercicios 4.4 - bonus 3
+//Exercicios 4.4 - bonus 3 **************************************
 function countBasket(vetor) {
   let returnPhrase = '';
   let objBasket = {};
@@ -133,6 +166,24 @@ function countBasket(vetor) {
   return returnPhrase;
 }
 
+//Exercicios 4.4 - bonus 3 *********************************************
+function encontraMorador() {
+  let lastResident = {};
+  let lastBlock = {}
+  let numBlocks = Object.entries(moradores);
+  // numResidents = Object.entries(moradores)[numBlocks-1].length;
+  for(let block of numBlocks) {
+    for (let resident of block) {
+      for (let ap of resident) {
+        lastResident = ap;  
+        lastBlock = block;
+      }
+    }
+  }
+  console.log(lastResident.nome);
+  console.log(` O morador do ${lastBlock[0]} de nome ${lastResident.nome} ${lastResident.sobrenome} mora no ${lastResident.andar}° andar, apartamento ${lastResident.apartamento}.`);
+}
+
 function executar(exercicio) {
   switch (exercicio) {
     case 1:
@@ -148,6 +199,9 @@ function executar(exercicio) {
       vetor = ['Banana'];
       console.log(countBasket(vetor));
       break;
+    case 4:
+      console.log(encontraMorador());
+      break;
     default:
       break;
   }
@@ -156,4 +210,6 @@ function executar(exercicio) {
 // console.log(Object.values(tableRomanos));
 //console.log(Object.entries(tableRomanos)[0][1]);
 
-executar(3);
+//valores aceitáveis para executar
+//1, 2, 3, 4
+executar(4);
