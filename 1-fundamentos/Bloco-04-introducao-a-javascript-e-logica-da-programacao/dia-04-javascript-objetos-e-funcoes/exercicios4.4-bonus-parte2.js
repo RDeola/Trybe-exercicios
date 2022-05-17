@@ -76,6 +76,16 @@ function maisRepete(valor) {
   return number[pos];
 }
 
+//Exercicio 4.4-bonus parte 2-6
+function fatorSum(valor) {
+  let sum = 0;
+  while (valor > 0) {
+    sum += valor;
+    valor -= 1;
+  }
+  return sum;
+}
+
 /******************************************************************** */
 function executar(exercicio) {
   let valor;
@@ -100,9 +110,13 @@ function executar(exercicio) {
       valor = [2, 3, 2, 5, 8, 2, 3];
       console.log(maisRepete(valor));
       break;
+    case 6:
+      valor = 5;
+      console.log(fatorSum(valor));
+      break;
     default:
       break;
   }
 }
 
-executar(5);
+executar(6);
