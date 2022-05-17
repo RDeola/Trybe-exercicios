@@ -86,6 +86,13 @@ function fatorSum(valor) {
   return sum;
 }
 
+//Exercicio 4.4-bonus parte 2-7
+function isEnding(strWord, strEnding) {
+  let lengthEnding = strEnding.length;
+  let lastPosition = (strWord.length-strWord.lastIndexOf(strEnding));
+  return (lastPosition == lengthEnding)
+}
+
 /******************************************************************** */
 function executar(exercicio) {
   let valor;
@@ -114,9 +121,12 @@ function executar(exercicio) {
       valor = 5;
       console.log(fatorSum(valor));
       break;
+    case 7:
+      console.log(isEnding('betrybe', 'be'));
+      break;
     default:
       break;
   }
 }
 
-executar(6);
+executar(7);
