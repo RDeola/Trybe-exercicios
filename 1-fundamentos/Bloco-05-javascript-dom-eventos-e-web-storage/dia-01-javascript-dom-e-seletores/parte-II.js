@@ -14,3 +14,5 @@ const tagParagraph = document.getElementsByTagName("p");
     tagParagraph[i].innerText = `${i + 1}  - ${tagParagraph[i].innerText}`;
   }
 
+const elemento = document.querySelectorAll("p");
+console.log(elemento);//console será executado no console do navegador
