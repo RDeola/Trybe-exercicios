@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    //exercicio Parte I - 1
+    const ondeVoceEsta =  document.getElementById('elementoOndeVoceEsta');
+
+    //exercicio Parte I - 2
+    const pai = ondeVoceEsta.parentElement;
+    pai.style.color = 'red';
+
+    //exercicio Parte I - 3
+    const firstChildOfChild = ondeVoceEsta.firstElementChild;
+    firstChildOfChild.innerHTML = 'teste do filho do filho!';
+
+    //exercicio Parte I - 4
+    let firstChild = pai.firstElementChild;
+
+    //exercicio Parte I - 5
+    firstChild = ondeVoceEsta.previousElementSibling;
+
+    //exercicio Parte I - 6
+    //let nodeAtention = ondeVoceEsta.parentNode.childNodes[4];
+    const nodeAtention = ondeVoceEsta.nextSibling;
+    
+    //exercicio Parte I - 7
+    let thirdChild = ondeVoceEsta.nextElementSibling;
+
+    //exercicio Parte I - 8
+    // thirdChild = pai.lastElementChild.previousElementSibling;
+    // thirdChild = pai.childNodes[5];
+    thirdChild = pai.children[2];
+  </script>
+</body>
+</html>
