@@ -70,18 +70,21 @@
     console.log(filhoDoFilhoDoFIlho.parentElement.parentElement.nextElementSibling);
 
     //exercicio Parte III - 1
-    function deleteChildren(element, vetor) {
+    function deleteChildren(element, vetor, origem) {
       if (element.children.length > 0) {
-        for (let i = 0; i < element.children.length; i += 1)
-          deleteChildren(element.children[i], vetor);
-      } else {
-        if (element.id !== vetor.filter(valor => (valor === element.id))) {
-          element.remove();
-        }
+         for (let i = element.children.length - 1; i >= 0; i -= 1)
+           deleteChildren(element.children[i], vetor, origem);
+        //} 
       }
+      let filtrado = vetor.filter(valor => (valor === element.id));
+      filtrado = filtrado.toString()
+      if ((element.id !== filtrado) && (element.id !== origem.id)) {
+        element.remove();
+      }
+      
     }
     const paiDoPai = document.querySelector('#paiDoPai');
-    deleteChildren(paiDoPai, ['pai', 'elementoOndeVoceEsta' , 'primeiroFilho']);
+    deleteChildren(paiDoPai, ['pai', 'elementoOndeVoceEsta' , 'primeiroFilho'], paiDoPai);
     
   </script>
 </body>
