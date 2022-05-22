@@ -85,7 +85,7 @@
       const tagSectionMainLeft = document.createElement('section');
       tagSectionMainLeft.className = 'left-content';
       appendObjeto(tagMain, tagSectionMainLeft);
-      
+
       //exercicio 6 - Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
       const tagSectionMainRight = document.createElement('section');
       tagSectionMainRight.className = 'right-content';
@@ -100,7 +100,18 @@
       //exercicio 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
       const tagUl = document.createElement('ul');
       appendObjeto(tagSectionMainRight, tagUl);
-      const extensos = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      const extensos = [
+        'Um',
+        'Dois',
+        'Três',
+        'Quatro',
+        'Cinco',
+        'Seis',
+        'Sete',
+        'Oito',
+        'Nove',
+        'Dez',
+      ];
       for (let extenso of extensos) {
         const tagLi = document.createElement('Li');
         tagLi.innerText = extenso;
@@ -110,8 +121,8 @@
       //exercicio 9 - Adicione 3 tags h3, todas sendo filhas do main criado no passo 2
       for (i = 0; i < 3; i += 1) {
         const tagH3 = document.createElement('h3');
-        tagH3.innerHTML = `Texto do ${i+1}° h3`;
-       appendObjeto(tagMain, tagH3);
+        tagH3.innerHTML = `Texto do ${i + 1}° h3`;
+        appendObjeto(tagMain, tagH3);
       }
 
       //exercicios Part II 1 - Adicione a classe title na tag h1 criada;
@@ -138,8 +149,9 @@
 
       //exercicios Part II 6 - Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
       const listaLi = document.getElementsByTagName('li');
-      for (i = listaLi.length - 1; i > 7; i -= 1)
+      for (i = listaLi.length - 1; i > 7; i -= 1) {
         listaLi[i].remove();
+      }
     </script>
   </body>
 </html>
