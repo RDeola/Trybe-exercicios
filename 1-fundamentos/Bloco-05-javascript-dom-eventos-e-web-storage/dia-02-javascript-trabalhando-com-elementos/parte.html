@@ -48,6 +48,44 @@
     // thirdChild = pai.lastElementChild.previousElementSibling;
     // thirdChild = pai.childNodes[5];
     thirdChild = pai.children[2];
+
+    //exercicio Parte II - 1
+    let siblingOndeVoceEsta = document.createElement(ondeVoceEsta.localName);
+    siblingOndeVoceEsta.id = 'irmaoOndeVoceEsta';
+    siblingOndeVoceEsta.innerHTML = 'irmão de ondeVoceEsta inserido';
+    ondeVoceEsta.parentElement.appendChild(siblingOndeVoceEsta);
+
+    //exercicio Parte II - 2
+    let childOndeVoceEsta = document.createElement('section');
+    childOndeVoceEsta.id = 'terceiroFilhoDoFilho';
+    ondeVoceEsta.appendChild(childOndeVoceEsta);
+
+    //exercicio Parte II - 3
+    let filhoDoFilhoDoFIlho = document.createElement('section');
+    filhoDoFilhoDoFIlho.id = 'primeiroFilhoDOFilhoDOFIlho'
+    firstChildOfChild.appendChild(filhoDoFilhoDoFIlho);
+
+    //exercicio Parte II - 4
+    console.log(document.getElementById('primeiroFilhoDOFilhoDOFIlho').parentElement.parentElement.nextElementSibling);
+    console.log(filhoDoFilhoDoFIlho.parentElement.parentElement.nextElementSibling);
+
+    //exercicio Parte III - 1
+    function deleteChildren(element, vetor, origem) {
+      if (element.children.length > 0) {
+         for (let i = element.children.length - 1; i >= 0; i -= 1)
+           deleteChildren(element.children[i], vetor, origem);
+        //} 
+      }
+      let filtrado = vetor.filter(valor => (valor === element.id));
+      filtrado = filtrado.toString()
+      if ((element.id !== filtrado) && (element.id !== origem.id)) {
+        element.remove();
+      }
+      
+    }
+    const paiDoPai = document.querySelector('#paiDoPai');
+    deleteChildren(paiDoPai, ['pai', 'elementoOndeVoceEsta' , 'primeiroFilho'], paiDoPai);
+    
   </script>
 </body>
 </html>
