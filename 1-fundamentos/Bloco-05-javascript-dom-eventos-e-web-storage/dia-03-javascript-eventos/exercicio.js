@@ -111,17 +111,27 @@ btnFridays.addEventListener('click', function () {
 // Dica - Propriedade: event.target
 ulDays.addEventListener('mouseover', function (element) {
   if (element.target.classList.contains('day')) {
-    let fontSize = window.getComputedStyle(ulDays).fontSize;
-    element.target.style.fontSize = fontSize + 2;
-    console.log(element.target.style);
+    element.target.style.fontSize = '30px';
+  }
+});
+ulDays.addEventListener('mouseout', function (element) {
+  if (element.target.classList.contains('day')) {
+    element.target.style.fontSize = '20px';
   }
 });
 
-// pixelBoard.addEventListener('click', (e) => {
-//   const { target } = e;
-//   if (target.classList.contains('pixel')) {
-//     const currentSelected = document.querySelector('.selected');
-//     const currentColor = window.getComputedStyle(currentSelected).backgroundColor;
-//     target.style.backgroundColor = currentColor;
-//   }
-// });
+// Exercicio 7 
+// Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+function newTask(task) {
+  const tagSpan = document.createElement('span');
+  tagSpan.innerHTML = task;
+  const tagMyTasks = document.querySelector('.my-tasks');
+  tagMyTasks.appendChild(tagSpan);
+}
+newTask('Pular');
+
+// Exercício 8:
+// Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task.
+// O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
