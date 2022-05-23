@@ -61,13 +61,13 @@ populaDays();
 // Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
 //  - Adicione a este botão a ID "btn-holiday".
 //  - Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
-function createButton(parent, string) {
+function createButton(parent, string , id) {
   const tagButton = document.createElement('button');
   tagButton.innerHTML = string;
-  tagButton.id = 'btn-holiday';
+  tagButton.id = id;
   parent.appendChild(tagButton);
 }
-createButton(buttonsContainer, 'Feriados');
+createButton(buttonsContainer, 'Feriados', 'btn-holiday');
 
 //Exercicio 3
 // Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday".
@@ -83,3 +83,9 @@ btnFeriados.addEventListener('click', function () {
     }
   }
 });
+
+//Exercicio 4 
+// Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+// Adicione a este botão o ID "btn-friday".
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
+createButton(buttonsContainer, 'Sexta-feira', 'btn-friday');
