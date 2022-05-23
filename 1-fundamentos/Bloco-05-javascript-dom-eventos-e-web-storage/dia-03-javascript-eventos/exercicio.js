@@ -36,8 +36,9 @@ const dezDaysList = [
 const dezHolidays = [24, 25, 31];
 const dezFridays = [4, 11, 18, 25];
 
+const ulDays = document.getElementById('days');
+
 function populaDays() {
-  const ulDays = document.getElementById('days');
   for (i = 0; i < dezDaysList.length; i += 1) {
     const liDay = document.createElement('li');
     liDay.classList.add('day');
@@ -61,7 +62,7 @@ populaDays();
 // Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
 //  - Adicione a este botão a ID "btn-holiday".
 //  - Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
-function createButton(parent, string , id) {
+function createButton(parent, string, id) {
   const tagButton = document.createElement('button');
   tagButton.innerHTML = string;
   tagButton.id = id;
@@ -84,7 +85,7 @@ btnFeriados.addEventListener('click', function () {
   }
 });
 
-//Exercicio 4 
+//Exercicio 4
 // Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
 // Adicione a este botão o ID "btn-friday".
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
@@ -104,3 +105,23 @@ btnFridays.addEventListener('click', function () {
     }
   }
 });
+
+// Exercício 6
+// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+// Dica - Propriedade: event.target
+ulDays.addEventListener('mouseover', function (element) {
+  if (element.target.classList.contains('day')) {
+    let fontSize = window.getComputedStyle(ulDays).fontSize;
+    element.target.style.fontSize = fontSize + 2;
+    console.log(element.target.style);
+  }
+});
+
+// pixelBoard.addEventListener('click', (e) => {
+//   const { target } = e;
+//   if (target.classList.contains('pixel')) {
+//     const currentSelected = document.querySelector('.selected');
+//     const currentColor = window.getComputedStyle(currentSelected).backgroundColor;
+//     target.style.backgroundColor = currentColor;
+//   }
+// });
