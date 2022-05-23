@@ -76,10 +76,10 @@ const btnFeriados = document.getElementById('btn-holiday');
 btnFeriados.addEventListener('click', function () {
   const holidays = document.getElementsByClassName('holiday');
   for (let i = 0; i < holidays.length; i += 1) {
-    if (holidays[i].style.background === 'rgb(235, 204, 204)') {
+    if (holidays[i].style.background === 'rgb(211, 232, 199)') {
       holidays[i].style.background = 'rgb(238, 238, 238)';
     } else {
-      holidays[i].style.background = 'rgb(235, 204, 204)';
+      holidays[i].style.background = 'rgb(211, 232, 199)';
     }
   }
 });
@@ -89,3 +89,18 @@ btnFeriados.addEventListener('click', function () {
 // Adicione a este botão o ID "btn-friday".
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
 createButton(buttonsContainer, 'Sexta-feira', 'btn-friday');
+
+// Exercício 5
+// Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+const btnFridays = document.getElementById('btn-friday');
+btnFridays.addEventListener('click', function () {
+  const fridays = document.getElementsByClassName('friday');
+  for (let i = 0; i < fridays.length; i += 1) {
+    if (fridays[i].style.background === 'rgb(211, 232, 199)') {
+      fridays[i].style.background = 'rgb(238, 238, 238)';
+    } else {
+      fridays[i].style.background = 'rgb(211, 232, 199)';
+    }
+  }
+});
