@@ -120,9 +120,8 @@ ulDays.addEventListener('mouseout', function (element) {
   }
 });
 
-
 const tagMyTasks = document.querySelector('.my-tasks');
-// Exercicio 7 
+// Exercicio 7
 // Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
 function newTask(task) {
@@ -130,7 +129,7 @@ function newTask(task) {
   tagSpan.innerHTML = task;
   tagMyTasks.appendChild(tagSpan);
 }
-newTask('Pular');
+newTask('Correr');
 
 // Exercício 8
 // Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task.
@@ -142,14 +141,13 @@ function newLegenda(cor) {
   tagDiv.classList.add('task');
   tagMyTasks.appendChild(tagDiv);
 }
-newLegenda('yellow');
+newLegenda('red');
 
 // Exercício 9
 // Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected, ela estará selecionada.
 // Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
-tagMyTasks.addEventListener('click', function(element) {
+tagMyTasks.addEventListener('click', function (element) {
   if (element.target.classList.contains('task')) {
-    console.log(element.target.classList.contains('selected'));
     if (element.target.classList.contains('selected')) {
       element.target.classList.remove('selected');
     } else {
@@ -158,3 +156,67 @@ tagMyTasks.addEventListener('click', function(element) {
   }
 });
 
+// Exercício 10
+// Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
+ulDays.addEventListener('click', function (element) {
+  if (element.target.classList.contains('day')) {
+    const selectedTask = document.querySelector('.selected');
+    if (selectedTask) {
+      let selectedTaskColor = selectedTask.style.background;
+      let dayColor = element.target.style.color;
+      if (selectedTaskColor === dayColor) {
+        element.target.style.color = 'rgb(119,119,119)';
+      } else {
+        element.target.style.color = selectedTaskColor;
+      }
+    } else {
+      element.target.style.color = 'rgb(119,119,119)';
+    }
+  }
+});
+
+// Bônus
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+// Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+// Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+// Dica - Propriedade: key.
+const input = document.getElementById('task-input');
+// function addCommitment() {
+//   let commitments = document.querySelector('.task-list');
+//   console.log(commitments);
+//   if (input.value.length <= 0) {
+//     alert('Campo vazio. Nada será adicionado!');
+//   } else {
+//     const spanCommitment = document.createElement('li');
+//     spanCommitment.innerHTML = input.value;
+//     spanCommitment.display = 'block';
+//     commitments.appendChild(spanCommitment);
+//   }
+// }
+const btnAdd = document.querySelector('#btn-add');
+btnAdd.addEventListener('click', function () {
+  let commitments = document.querySelector('.task-list');
+  console.log(commitments);
+  if (input.value.length <= 0) {
+    alert('Campo vazio. Nada será adicionado!');
+  } else {
+    const spanCommitment = document.createElement('li');
+    spanCommitment.innerHTML = input.value;
+    input.value = '';
+    spanCommitment.display = 'block';
+    commitments.appendChild(spanCommitment);
+  }
+});
+
+input.addEventListener('keypress', function (e) {
+  let commitments = document.querySelector('.task-list');
+  console.log(e.key);
+  if (input.value.length > 0 && e.key === 'Enter') {
+    const spanCommitment = document.createElement('li');
+    spanCommitment.innerHTML = input.value;
+    input.value = '';
+    spanCommitment.display = 'block';
+    commitments.appendChild(spanCommitment);
+  }
+});
