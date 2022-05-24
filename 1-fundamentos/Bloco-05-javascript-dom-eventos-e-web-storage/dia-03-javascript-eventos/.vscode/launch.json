@@ -1,0 +1,25 @@
+{
+  /*
+  Workspace settings override user settings.
+  https://code.visualstudio.com/docs/getstarted/settings
+  Check to see if needed ports are listening: sudo lsof -i -P -n | grep LISTEN
+  */
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch 127.0.0.1:5500",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:5500/${relativeFileDirname}/${fileBasename}",
+      "webRoot": "${workspaceFolder}/${relativeFileDirname}"
+    },
+    {
+      "name": "Attach 127.0.0.1:9222",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "url": "http://127.0.0.1:5500/${relativeFileDirname}/${fileBasename}",
+      "webRoot": "${workspaceFolder}/${relativeFileDirname}/"
+    }
+  ]
+}
