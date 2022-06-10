@@ -76,3 +76,26 @@ console.log(getValueByNumber(lesson2, 2));
 // Output: false
 const verifyPair = (object, key, value) => object[key] === value ? true : false;
 console.log(verifyPair(lesson3, 'turno', 'noite'));
+
+
+// Bônus 1 - 🚀 Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+total = 0;
+Object.values(allLessons).forEach(value => {value['materia'] === 'Matemática' ? total += value['numeroEstudantes'] : total += 0});
+console.log(total);
+
+// Bônus 2 - 🚀 Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+total = 0;
+let materias = [];
+function createReport(object, teacher) {
+  Object.values(object).forEach(value => {
+    if (value['professor'] === teacher) {
+      materias.push(value['materia']);
+      total += value['numeroEstudantes'];
+    } 
+  })
+  return `professor: ${teacher},
+  aulas : [ ${materias} ],
+  estudantes: ${total}`;
+}
+console.log(createReport(allLessons, 'Maria Clara'))
+
