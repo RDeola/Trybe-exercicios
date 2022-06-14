@@ -19,7 +19,9 @@ const lesson3 = {
 };
 
 // 1 - Crie uma função para adicionar o turno da noite na lesson2. Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
-const addTurno = (object, key, value) => {object[key] = value};
+const addTurno = (object, key, value) => {
+  object[key] = value;
+};
 addTurno(lesson2, 'turno', 'noite');
 console.log(lesson2);
 
@@ -28,7 +30,7 @@ const keyList = (object) => Object.keys(object);
 console.log(keyList(lesson3));
 
 // 3 - Crie uma função para mostrar o tamanho de um objeto.
-const size = (object) => Object.keys(object).length;;
+const size = (object) => Object.keys(object).length;
 console.log(size(lesson1));
 
 // 4 - Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
@@ -61,7 +63,9 @@ console.log(allLessons);
 
 // 6 - Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
 let total = 0;
-Object.values(allLessons).forEach(value => {total += value['numeroEstudantes']});
+Object.values(allLessons).forEach((value) => {
+  total += value['numeroEstudantes'];
+});
 console.log(total);
 
 // 7 - Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo: console.log(getValueByNumber(lesson1, 0));
@@ -74,5 +78,6 @@ console.log(getValueByNumber(lesson2, 2));
 // Output: true,
 // console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
-const verifyPair = (object, key, value) => object[key] === value ? true : false;
+const verifyPair = (object, key, value) =>
+  object[key] === value ? true : false;
 console.log(verifyPair(lesson3, 'turno', 'noite'));

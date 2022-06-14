@@ -15,19 +15,19 @@ const order = {
       pepperoni: {
         amount: 1,
         price: 20,
-      }
+      },
     },
     drinks: {
       coke: {
         type: 'Coca-Cola Zero',
         price: 10,
         amount: 1,
-      }
+      },
     },
     delivery: {
       deliveryPerson: 'Ana Silveira',
       price: 5,
-    }
+    },
   },
   payment: {
     total: 60,
@@ -44,18 +44,23 @@ const customerInfo = (order) => {
   const number = order[address].number;
   const apartment = order[address].apartment;
 
-  console.log(`Olá ${deliveryPerson}, entrega para: ${customerName}, Telefone: ${customerPhone}, R. ${street}, Nº: ${number}, AP: ${apartment}`);
-}
-
+  console.log(
+    `Olá ${deliveryPerson}, entrega para: ${customerName}, Telefone: ${customerPhone}, R. ${street}, Nº: ${number}, AP: ${apartment}`
+  );
+};
 
 customerInfo(order);
 
 order['name'] = 'Luiz Silva';
 order.payment.total = 50;
 function orderModifier(order) {
-
-  
-  console.log(`Olá ${order.name}, o total do seu pedido de ${Object.keys(order.order.pizza)[0]}, ${Object.keys(order.order.pizza)[1]} e ${order.order.drinks.coke.type} é R$ ${order.payment.total},00`);
+  console.log(
+    `Olá ${order.name}, o total do seu pedido de ${
+      Object.keys(order.order.pizza)[0]
+    }, ${Object.keys(order.order.pizza)[1]} e ${
+      order.order.drinks.coke.type
+    } é R$ ${order.payment.total},00`
+  );
 }
 
 orderModifier(order);
