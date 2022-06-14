@@ -25,7 +25,9 @@
       // 2 🚀 - Agora adicione uma outra exceção, caso a pessoa usuária digite um valor que não seja numérico.
       function verifyIsNaN(value1, value2) {
         if (isNaN(value1) || isNaN(value2)) {
-          throw new Error('Ambos valores devem ser numéricos para realizar a soma');
+          throw new Error(
+            'Ambos valores devem ser numéricos para realizar a soma'
+          );
         }
       }
 
@@ -38,8 +40,10 @@
           const result = parseInt(value1) + parseInt(value2);
           document.getElementById('result').innerHTML = `Resultado: ${result}`;
         } catch (error) {
-          document.getElementById('result').innerHTML = `Erro: ${error.message}`;
-        } finaly {
+          document.getElementById(
+            'result'
+          ).innerHTML = `Erro: ${error.message}`;
+        } finally {
           // 3 🚀 - Você se lembrou de limpar os inputs após o clique do botão? Teve que repetir código para isso? Que tal refatorar sua função utilizando o finally?
           document.getElementById('value1').value = '';
           document.getElementById('value2').value = '';
@@ -48,7 +52,7 @@
       window.onload = () => {
         const button = document.getElementById('button');
         button.addEventListener('click', sum);
-      }
+      };
     </script>
   </body>
 </html>
