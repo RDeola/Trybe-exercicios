@@ -77,7 +77,6 @@ console.log(getValueByNumber(lesson2, 2));
 // console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
 const verifyPair = (object, key, value) =>
-	object[key] === value ? true : false;
 console.log(verifyPair(lesson3, 'turno', 'noite'));
 
 // Bônus 1 - 🚀 Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
