@@ -1,27 +1,25 @@
 const lesson1 = {
-  materia: 'Matemática',
-  numeroEstudantes: 20,
-  professor: 'Maria Clara',
-  turno: 'manhã',
+	materia: 'Matemática',
+	numeroEstudantes: 20,
+	professor: 'Maria Clara',
+	turno: 'manhã',
 };
 
 const lesson2 = {
-  materia: 'História',
-  numeroEstudantes: 20,
-  professor: 'Carlos',
+	materia: 'História',
+	numeroEstudantes: 20,
+	professor: 'Carlos',
 };
 
 const lesson3 = {
-  materia: 'Matemática',
-  numeroEstudantes: 10,
-  professor: 'Maria Clara',
-  turno: 'noite',
+	materia: 'Matemática',
+	numeroEstudantes: 10,
+	professor: 'Maria Clara',
+	turno: 'noite',
 };
 
 // 1 - Crie uma função para adicionar o turno da noite na lesson2. Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
-const addTurno = (object, key, value) => {
-  object[key] = value;
-};
+const addTurno = (object, key, value) => (object[key] = value);
 addTurno(lesson2, 'turno', 'noite');
 console.log(lesson2);
 
@@ -64,7 +62,7 @@ console.log(allLessons);
 // 6 - Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
 let total = 0;
 Object.values(allLessons).forEach((value) => {
-  total += value['numeroEstudantes'];
+	total += value['numeroEstudantes'];
 });
 console.log(total);
 
@@ -79,5 +77,29 @@ console.log(getValueByNumber(lesson2, 2));
 // console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
 const verifyPair = (object, key, value) =>
-  object[key] === value ? true : false;
 console.log(verifyPair(lesson3, 'turno', 'noite'));
+
+// Bônus 1 - 🚀 Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+total = 0;
+Object.values(allLessons).forEach((value) => {
+	value['materia'] === 'Matemática'
+		? (total += value['numeroEstudantes'])
+		: (total += 0);
+});
+console.log(total);
+
+// Bônus 2 - 🚀 Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+total = 0;
+let materias = [];
+function createReport(object, teacher) {
+	Object.values(object).forEach((value) => {
+		if (value['professor'] === teacher) {
+			materias.push(value['materia']);
+			total += value['numeroEstudantes'];
+		}
+	});
+	return `professor: ${teacher},
+  aulas : [ ${materias} ],
+  estudantes: ${total}`;
+}
+console.log(createReport(allLessons, 'Maria Clara'));
