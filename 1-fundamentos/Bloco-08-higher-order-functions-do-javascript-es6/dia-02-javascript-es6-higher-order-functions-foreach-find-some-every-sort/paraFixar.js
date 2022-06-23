@@ -13,7 +13,8 @@ const showEmailList1 = (email) => {
 };
 
 // Adicione seu código aqui
-emailListInData.forEach((email) => showEmailList1(email));
+emailListInData.forEach((email) => showEmailList1(email)); // minha
+emailListInData.forEach(showEmailList1(email)); //gabarito
 
 // 2 - Leia e entenda este exemplo do forEach feito no CodePen.
 // Array contendo a lista de emails.
@@ -66,7 +67,7 @@ const musicas = [
 
 function findMusic(id) {
   // Adicione seu código aqui
-  return musicas.find((music) => music.id === '31031685');
+  return musicas.find((music) => music.id === id);
 }
 
 console.log(findMusic('31031685'));
@@ -74,14 +75,14 @@ console.log(findMusic('31031685'));
 // ARRAY.SOME & ARRAY.EVERY ***************************************************************************************************************************************
 
 // 1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false, use some;
-const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+const nameS = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
 const hasName = (arr, name) => {
   //Adicione seu código aqui
   return arr.some((person) => person === name);
 };
 
-console.log(hasName(names, 'Ana'));
+console.log(hasName(nameS, 'Ana'));
 
 // 2 - Escreva uma função que dado um array de pessoas e uma idade mínima retorne true se todas tiverem a idade maior ou igual a mínima e caso contrário false, use every;
 const people = [
