@@ -109,6 +109,7 @@ const expectedResult = [
 
 function booksOrderedByReleaseYearDesc() {
   // escreva aqui seu código
-  return books.sort((a, b) => b.releaseYear - a.releaseYear);
+  // return books.sort((a, b) => b.releaseYear - a.releaseYear); //numeros
+  return books.sort((a, b) => (a.name == b.name ? 0 : a.name > b.name ? -1 : 1)); //string
 }
 console.log(booksOrderedByReleaseYearDesc());
