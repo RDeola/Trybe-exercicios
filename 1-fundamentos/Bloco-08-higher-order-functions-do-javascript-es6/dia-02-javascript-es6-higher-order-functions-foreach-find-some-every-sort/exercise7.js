@@ -75,4 +75,15 @@ function authorUnique() {
       )
   );
 }
+// function authorUnique() {
+//   // escreva seu código aqui
+//   return !books.some(
+//     (book) =>
+//       books.some(
+//         (bookToCompare) =>
+//           book.author.birthYear === bookToCompare.author.birthYear &&
+//           book.author.name !== bookToCompare.author.name
+//       )
+//   );
+// }
 console.log(authorUnique());
