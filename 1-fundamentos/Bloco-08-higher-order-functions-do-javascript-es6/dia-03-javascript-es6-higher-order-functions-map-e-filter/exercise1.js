@@ -81,8 +81,6 @@ console.log(formatedBookNames());
 
 // usando o sort para ordenar strings pelo comprimento
 const lowerName = () => {
-  return books
-    .map((book) => `${book.name}`)
-    .sort((a, b) => (a.length === b.length ? 0 : a.length > b.length ? 1 : -1));
+  return books.map((book) => `${book.name}`).sort((a, b) => a.length - b.length);
 };
 console.log(lowerName());
