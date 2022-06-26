@@ -79,7 +79,7 @@ function formatedBookNames() {
 }
 console.log(formatedBookNames());
 
-//usando o sort para ordenar strings pelo comprimento
+// usando o sort para ordenar strings pelo comprimento
 const lowerName = () => {
   return books
     .map((book) => `${book.name}`)
