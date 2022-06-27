@@ -70,9 +70,14 @@ const expectedResult =
 function reduceNames() {
   // escreva seu código aqui
 
-  return books.reduce((acc, curr, index, array) => {
-    if (index === array.length - 1) return `${acc} ${curr.author.name}.`;
-    return `${acc} ${curr.author.name},`;
-  }, '');
+  // return books.reduce((acc, curr, index, array) => {
+  //   if (index === array.length - 1) return `${acc} ${curr.author.name}.`;
+  //   return `${acc} ${curr.author.name},`;
+  // }, '');
+  return books.reduce(
+    (acc, curr, index, array) =>
+      index === array.length - 1 ? `${acc} ${curr.author.name}.` : `${acc} ${curr.author.name},`,
+    ''
+  );
 }
 console.log(reduceNames());
