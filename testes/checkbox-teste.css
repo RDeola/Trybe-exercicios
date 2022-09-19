@@ -1,0 +1,63 @@
+input[type=checkbox] {
+  display:none;
+}
+input[type=checkbox] + label {
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    display:inline-block;
+}
+input#input_1_0 + label {
+  background-image: url('https://www.seeklogo.net/wp-content/uploads/2015/09/new-google-favicon-logo.png');
+}
+input#input_1_0:checked + label {
+    background-image: url('http://2.bp.blogspot.com/-mfrRQkewv3Y/VkSzsWasszI/AAAAAAAAAQQ/LIjzOEn35B0/s1600/drive%2Blogo.png');
+}
+input#input_1_1 + label {
+  background-image: url('http://2.bp.blogspot.com/-mfrRQkewv3Y/VkSzsWasszI/AAAAAAAAAQQ/LIjzOEn35B0/s1600/drive%2Blogo.png');
+}
+input#input_1_1:checked + label {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Google_plus.svg/1047px-Google_plus.svg.png');
+}
+
+// abaixo o css para o like animado
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+  width: 100px;
+}
+
+.like-btn {
+  display: inline-block;
+  Cursor: pointer;
+  position: absolute;
+  top: 109px;
+  left: 15px;
+  background: url('./images/heart.jpg');
+  width: 60px;
+  height: 60px;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.is-active {
+  animation-name: animate;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(28);
+  animation-fill-mode: forwards;
+}
+ 
+@keyframes animate {
+  0%   { background-position: left;  }
+  50%  { background-position: right; }
+  100% { background-position: right; }
+}
+
+.image {
+  margin-right: 50px;
+}
