@@ -1,0 +1,11 @@
+2 - Crie um container para manter um servidor httpd:2.4 Apache e vincule sua porta interna com a porta 4545 da sua máquina local.
+  pwd
+  - para pegar o caminho atual do html. Foi executado estando na pasta onde o html se encontra
+  - retorno: "/home/rdeola/Trybe-exercicios/3-back-end/s01-utilizando-containers/d03-orquestrando-containers-com-docker-compose/aula-docker-compose/exercicio-1"
+
+  docker run -d --name site-trybe -p 4545:80 -v "/home/rdeola/Trybe-exercicios/3-back-end/s01-utilizando-containers/d03-orquestrando-containers-com-docker-compose/aula-docker-compose/exercicio-1:/usr/local/apache2/htdocs" httpd:2.4
+
+6 - Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host.
+  docker container ls
+  docker inspect <COLOQUE AQUI SEU CONTAINER ID>
+  - procurar no registo a entrada Mounts: e dentro dela, Source:
